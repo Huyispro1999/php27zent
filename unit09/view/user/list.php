@@ -40,8 +40,8 @@
                 </td>
                 <td>
                     <a href="index.php?mod=user&act=detail&id=<?= $user['id'] ?>" class="btn btn-primary">Detail</a>
-                    <a href="user_edit.php?id=<?= $user['id'] ?>" class="btn btn-success">Edit</a>
-                    <a href="user_delete.php?id=<?= $user['id'] ?>" class="btn btn-danger">Delete</a>
+                    <a href="index.php?mod=user&act=edit&id=<?= $user['id'] ?>" class="btn btn-success">Edit</a>
+                    <a href="index.php?mod=user&act=delete&id=<?= $user['id'] ?>" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
             

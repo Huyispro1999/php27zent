@@ -31,6 +31,20 @@
 			$result = $this->connection->query($sql);
 			return $result->fetch_assoc();
 		}
+		function create($data){
+			$sql="INSERT INTO users (name, email,avatar) VALUES ('".$data_user['name']."','".$data_user['email']."','".$data_user['avatar']."')";
+			return $this->connection->query($sql);
+
+		}
+		function delete($id){
+			$sql = "DELETE FROM users WHERE id = ".$id;
+			return $this->connection->query($sql);
+		}
+		function update($data){
+			$sql = "UPDATE users SET name='".$data['name']."',email='".$data['email']."',avatar='".$data['avatar']."' WHERE id=".$data['id'];
+
+			return $this->connection->query($sql);
+		}
 	}
 
 	// $category = new Category();

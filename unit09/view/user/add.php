@@ -15,18 +15,23 @@
 </head>
 <body>
     <div class="container">
-    <h3 align="center">Add New Category</h3>
+    <h3 align="center">Add New User</h3>
     <hr>
-        <form action="category_add_process.php" method="POST" role="form" enctype="multipart/form-data">
+        <form action="?mod=user&act=store" method="POST" role="form" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="">Name</label>
-                <input type="text" class="form-control" id="" placeholder="" name="name">
+                <input type="text" class="form-control" id="" placeholder="Input user name" name="name" required="true">
             </div>
             <div class="form-group">
-                <label for="">Description</label>
-                <input type="text" class="form-control" id="" placeholder="" name="description">
+                <label for="">Email</label>
+                <input type="text" class="form-control" id="" placeholder="Input user email" name="email"required="true">
             </div>
-            <button type="submit" class="btn btn-primary">Create</button>
+            <div class="form-group">
+                <label for="">Avatar</label>
+                <input type="text" class="form-control" id="" placeholder="Input link of avatar" name="avatar" required="true">
+            </div>
+            <button type="submit" class="btn btn-primary">Create User</button>
+            
         </form>
     </div>
 </body>

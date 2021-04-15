@@ -31,6 +31,20 @@
 			$result = $this->connection->query($sql);
 			return $result->fetch_assoc();
 		}
+		function create($data){
+			$sql="INSERT INTO posts (title, description,content,view_count,user_id,category_id) VALUES ('".$data['title']."','".$data['description']."','".$data['content']."','".$data['view_count']."','".$data['user_id']."','".$data['category_id']."')";
+			return $this->connection->query($sql);
+
+		}
+		function delete($id){
+			$sql = "DELETE FROM posts WHERE id = ".$id;
+			return $this->connection->query($sql);
+		}
+		function update($data){
+			$sql = "UPDATE posts SET title='".$data['title']."',description='".$data['description']."',content='".$data['content']."',view_count='".$data['view_count']."' WHERE id=".$data['id'];
+
+			return $this->connection->query($sql);
+		}
 	}
 
 	// $category = new Category();

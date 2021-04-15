@@ -15,17 +15,21 @@
 </head>
 <body>
     <div class="container">
-    <h3 align="center">Update Category</h3>
+    <h3 align="center">Update User</h3>
     <hr>
-        <form action="index.php?mod=category&act=update" method="POST" role="form" enctype="multipart/form-data">
+        <form action="?mod=user&act=update" method="POST" role="form" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="">Name</label>
-                <input type="hidden" class="form-control" id="" placeholder="" name="id" value="<?= $category['id']?>">
-                <input type="text" class="form-control" id="" placeholder="" name="name" value="<?= $category['name']?>">
+                <input type="hidden" class="form-control" id="" placeholder="" name="id" value="<?= $user['id']?>">
+                <input type="text" class="form-control" id="" placeholder="" name="name" value="<?= $user['name']?>">
             </div>
             <div class="form-group">
-                <label for="">Description</label>
-                <input type="text" class="form-control" id="" placeholder="" name="description" value="<?= $category['description']?>">
+                <label for="">Email</label>
+                <input type="text" class="form-control" id="" placeholder="" name="email" value="<?= $user['email']?>">
+            </div>
+            <div class="form-group">
+                <label for="">Avatar</label>
+                <input type="text" class="form-control" id="" placeholder="" name="avatar" value="<?= $user['avatar']?>">
             </div>
             <button type="submit" class="btn btn-primary">Update</button>
         </form>

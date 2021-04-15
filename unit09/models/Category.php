@@ -31,6 +31,21 @@
 			$result = $this->connection->query($sql);
 			return $result->fetch_assoc();
 		}
+		function create($data){
+			$sql="INSERT INTO categories (name, description) VALUES ('".$data['name']."','".$data['description']."')";
+			return $this->connection->query($sql);
+
+		}
+		function delete($id){
+			$sql="DELETE FROM categories WHERE id = ".$id;
+			return $this->connection->query($sql);
+		}
+		function update($data){
+			 $sql = "UPDATE categories SET name='".$data['name']."',description='".$data['description']."' WHERE id=".$data['id'];
+
+			return $this->connection->query($sql);
+		}
+
 	}
 
 	// $category = new Category();

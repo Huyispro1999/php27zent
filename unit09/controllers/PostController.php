@@ -1,7 +1,9 @@
 <?php 
 	require_once('models/Post.php');
 	class PostController{
+		var $model;
 		function __construct(){
+			$this->model= new Post();
 			
 		}
 		function list(){
@@ -16,13 +18,42 @@
 			require_once('view/post/detail.php');
 		}
 		function add(){
-			echo "<br> Form thêm mới category";
+			require_once('view/post/add.php');
 		}
-		function add_process(){
-			echo "<br> process thêm mới category";
+		function store(){
+			$data=$_POST;
+			$status=$this->model->create($data);
+			if($status==1){
+				echo "Them moi thanh cong !";
+			}
+			else {
+				echo "Them moi that bai !";
+			}
+		}
+		function delete(){
+			$id=$_GET['id'];
+			$status=$this->model->delete($id);
+			if($status==1){
+				echo "Xoá thanh cong !";
+			}
+			else {
+				echo "Xoá that bai !";
+			}
 		}
 		function edit(){
-			echo "<br> Form sửa category";
+			$id=$_GET['id'];
+			$post = $this->model->find($id);
+			require_once('view/post/edit.php');
+		}
+		function update(){
+			$data=$_POST;
+			$status=$this->model->update($data);
+			if($status==1){
+				echo "Update thanh cong !";
+			}
+			else {
+				echo "Update that bai !";
+			}
 		}
 
 	}
